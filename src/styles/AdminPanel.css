@@ -1,0 +1,53 @@
+.admin-panel {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-header {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.admin-header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.admin-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-content h2 {
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.client-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.client-list th,
+.client-list td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.client-list th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+    color: #333;
+}
+
+.client-list tr:hover {
+    background-color: #f8f9fa;
+}

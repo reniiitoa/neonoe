@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Login from './components/Login';
+import AdminDashboard from './components/AdminDashboard';
+import AccountsReceivable from './components/AccountsReceivable';
+import WorkersView from './components/WorkersView';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [user, setUser] = useState(null);
+    const [currentView, setCurrentView] = useState('dashboard');
+
+    const handleLogin = (userData) => {
+        setUser(userData);
+    };
+
+    const handleNavigation = (view) => {
+        setCurrentView(view);
+    };
+
+    if (!user) {
+        return <Login onLogin={handleLogin} />;
+    }
+
+    return (
+        <div className="App">
+            {currentView === 'dashboard' && (
+                <AdminDashboard 
+                    onNavigate={handleNavigation}
+                    currentView={currentView}
+                />
+            )}
+            {currentView === 'accounts' && (
+                <AccountsReceivable 
+                    onNavigate={handleNavigation}
+                    currentView={currentView}
+                />
+            )}
+            {currentView === 'workers' && (
+                <WorkersView 
+                    onNavigate={handleNavigation}
+                    currentView={currentView}
+                />
+            )}
+        </div>
+    );
 }
 
 export default App;

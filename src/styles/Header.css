@@ -1,0 +1,78 @@
+.layout-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #131456;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease;
+    z-index: 2;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100vw - 250px);
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    padding: 40px; /* Aumentar el padding para más espacio alrededor del contenido */
+    align-items: center; /* Centrar el contenido dentro del main-content */
+    justify-content: center; /* Centrar verticalmente el contenido */
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 80px;
+    width: calc(100vw - 80px);
+}
+
+.header-container {
+    background-color: #131456;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: none;
+    margin: 0;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #131456;
+    z-index: 1;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px; /* Aumentar el margen superior para separar del header */
+    margin-bottom: 40px; /* Aumentar el margen inferior para separar del contenido */
+}
+
+@media screen and (max-width: 768px) {
+    .header-title {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-title {
+        font-size: 18px;
+    }
+}

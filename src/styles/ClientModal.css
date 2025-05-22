@@ -1,0 +1,326 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 9px 24px;
+    border-radius: 30px 30px 0 0;
+    width: 202px;  /* Aumentado 5% de 192px */
+    transform: scale(0.54);
+    transform-origin: center;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-row label {
+    color: #333;
+    font-size: 13px;  /* Aumentado de 11px */
+    font-weight: bold;
+    margin-bottom: 4px;
+    min-width: 112px;
+}
+
+.info-row span {
+    color: #333;
+    font-size: 15px;  /* Aumentado de 14px */
+    border-bottom: 1px solid #000000;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    width: 100%;
+    font-weight: normal;
+}
+
+.modal-header h2 {
+    font-size: 30px;  /* Aumentado de 28px */
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 14px 150px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* También ajustamos algunos espaciados internos para mantener la proporción */
+.modal-header {
+    padding: 12px 16px;  /* Reducido de 15px 20px */
+    margin: -20px -16px 20px -16px;  /* Ajustado proporcionalmente */
+}
+
+.info-row {
+    margin-bottom: 8px;  /* Reducido de 10px */
+}
+
+.info-row label {
+    font-size: 11px;  /* Reducido de 14px */
+    min-width: 112px;  /* Reducido de 140px */
+}
+
+/* Única definición del modal-header */
+.modal-header {
+    background-color: #1e2761; /* Azul navy más preciso */
+    padding: 15px 20px;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    margin: -25px -20px 25px -20px;
+    text-align: center;
+    border-bottom: 2px solid #151b45; /* Borde en azul más oscuro */
+}
+
+.modal-header h2 {
+    font-size: 28px;
+    color: #ff0000;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Elimina la definición duplicada de .modal-header h2 que está al final del archivo */
+.close-button {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 30px;
+    background: #1a237e; /* Botón en azul más oscuro */
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    line-height: 20px;
+    border: none;
+}
+
+.info-row span {
+    color: #333;
+    font-size: 14px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    width: 90%;
+    margin: 0 auto 0 0;
+    position: relative;
+    display: block;
+    word-wrap: break-word;     /* Permite que el texto se ajuste */
+    white-space: pre-wrap;     /* Mantiene los saltos de línea y espacios */
+    overflow-y: auto;          /* Agrega scroll vertical si es necesario */
+    max-height: 100px;         /* Altura máxima antes de mostrar scroll */
+}
+
+/* Para la descripción específicamente */
+.info-row:nth-child(3) span {  /* El índice puede variar según tu estructura */
+    max-height: 150px;         /* Altura máxima para la descripción */
+    overflow-y: auto;
+    padding-right: 5px;        /* Espacio para el scrollbar */
+}
+
+/* Estilo para el scrollbar */
+.info-row span::-webkit-scrollbar {
+    width: 6px;
+}
+
+.info-row span::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.info-row span::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.info-row span::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.info-row span {
+    top: 0;          /* Ajustable manualmente - posición vertical */
+    left: 0%;         /* Ajustable manualmente - posición horizontal */
+    max-width: 100%;  /* Ajustable manualmente - ancho máximo */
+    min-width: 100%;  /* Ajustable manualmente - ancho mínimo */
+    transform: scaleX(1); /* Ajustable manualmente - estira o encoge la línea horizontalmente */
+}
+
+/* Ajuste especial para la línea del cliente */
+.info-row:first-child span {
+    width: 10%;
+    margin: 0 auto;
+    position: relative;
+    top: 0;          /* Ajustable manualmente */
+    left: -80px;         /* Ajustable manualmente */
+    max-width: 100%;  /* Ajustable manualmente */
+    min-width: 100%;  /* Ajustable manualmente */
+    transform: scaleX(1); /* Ajustable manualmente */
+}
+
+/* Estilo especial para el cliente */
+.info-row:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-bottom: 35px;
+    padding: 0 20px;
+    position: relative;
+    border-bottom: none;
+}
+
+.info-row:first-child label {
+    font-size: 20px;
+    color: #000000;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.info-row:first-child span {
+    font-size: 20px;
+    font-weight: bold;
+    width: 180px;
+    text-align: left;
+    padding-bottom: 3px;
+    border-bottom: none;
+}
+
+.info-row:first-child::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 20px;
+    width: 85%;
+    height: 2px;
+    background-color: #000000;
+}
+
+/* Estilos para las demás filas */
+.info-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: left;
+}
+
+.info-row label {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    min-width: 140px;
+}
+
+.info-row span {
+    color: #333;
+    font-size: 25px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    width: 100%;
+    font-weight: normal;
+}
+
+.info-row:first-child::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 20px;  /* Ajustado el margen izquierdo */
+    width: 70%;   /* Reducido el ancho */
+    height: 2px;
+    background-color: #000000;
+}
+
+.info-row:first-child label {
+    font-size: 18px;
+    color: #000000;
+    margin-right: 36px;
+    font-weight: bold;
+}
+
+.info-row:first-child span {
+    font-size: 18px;
+    font-weight: bold;
+    width: 180px;
+    text-align: left;
+    padding-bottom: 3px;  /* Reducido el padding inferior */
+    border-bottom: 3px solid #000000;
+}
+
+.info-row:first-child::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;  /* Reducido el espacio */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+}
+
+/* Eliminar estilos duplicados y conflictivos */
+.info-row:first-child {
+    border-bottom: none;
+}
+
+.info-row:first-child label {
+    font-size: 25px;
+    color: #000000;
+}
+
+.info-row:first-child span {
+    font-size: 20px; /* tamaño de fuente cliente*/
+    font-weight: bold;
+    border-bottom: none;
+}
+
+.info-row label {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.edit-input {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    width: 100%;
+}
+
+.save-button {
+    background-color: #000000;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+}
+
+.info-row span {
+    color: #333;
+    flex: 1;
+    border-bottom: 1px solid #000000; /* Línea más oscura */
+    padding-bottom: 5px;
+    padding-left: 5px;
+    font-weight: 500; /* Semi-negrita para los valores */
+}
+
+.modal-header h2 {
+    font-size: 28px; /* Texto más grande */
+    color: #000000;
+    text-align: center;
+    margin: 0;
+    font-weight: bold; /* Título en negrita */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}

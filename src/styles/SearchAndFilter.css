@@ -1,0 +1,30 @@
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px;
+    font-size: 13px;
+    width: 200px;
+}
+
+.status-filter {
+    padding: 8px;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 768px) {
+    .search-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-bar input, 
+    .status-filter {
+        width: 100%;
+        max-width: none;
+    }
+}

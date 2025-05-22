@@ -1,0 +1,759 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e8f5e9;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.main-content {
+    flex: 1;
+    padding: 15px;
+    background-color: #e8f5e9;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.clients-table {
+    overflow-x: auto;
+    transform: scale(0.95);
+    margin: 10px auto;
+}
+
+@media screen and (max-width: 1366px) {
+    .clients-table {
+        transform: scale(0.9);
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .clients-table {
+        transform: scale(0.85);
+    }
+
+    .search-section {
+        transform: scale(0.95);
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .clients-table {
+        transform: none;
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 600px;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .status {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #cef0d3;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: none;
+    background: none;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.nav-item.active {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fcfcfc;
+}
+
+.content-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 6px 12px;
+}
+
+.back-button:hover {
+    transform: translateX(-3px);
+    color: #1b5e20;
+}
+
+/* Eliminar estos estilos que causaban la flecha fea */
+/* .back-button::before {
+    content: '←';
+    font-size: 18px;
+} */
+
+.content-header h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 0;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    color: #1b5e20;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-3px);
+    opacity: 0.8;
+}
+
+.back-button::before {
+    content: '←';
+    font-size: 18px;
+}
+
+.clients-table {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #333;
+}
+
+.search-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.status-filter {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+}
+
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 0 20px;
+}
+
+.search-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 250px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.add-client-button, .historial-button {
+    background-color: #2e3192;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.add-client-button {
+    background-color: #23166e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.add-client-button:hover {
+    background-color: #10247c;
+}
+
+.manage-btn:hover {
+    background-color: #2e7d32;
+}
+
+.clients-table {
+    background: white;
+    border-radius: 25px;
+    padding: 20px;
+    margin: 20px;
+    overflow: hidden;
+    border: 1px solid black;
+    width: 95%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+th {
+    background: white;
+    font-weight: 500;
+    color: #333;
+}
+
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+
+.total-section span:first-child {
+    font-weight: bold;
+}
+
+.total-section span:last-child {
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+th {
+    background: white;
+    font-weight: 500;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr td:last-child {
+    border-right: none;
+}
+
+tr td:first-child {
+    border-left: none;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+.status {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.status.al-dia {
+    background-color: #e6f4ea;
+    color: #1e7e34;
+}
+
+.status.pagado {
+    background-color: #e6f4ea;
+    color: #1e7e34;
+}
+
+.manage-btn {
+    background-color: #1b5e20;
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    min-width: 80px;
+}
+
+.send-btn {
+    background-color: #1b5e20;
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    min-width: 80px;
+}
+
+.send-btn:hover, .manage-btn:hover {
+    background-color: #2e7d32;
+}
+
+.status.pendiente {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.sin-pagar {
+    background-color: #f8d7da;
+    color: #dc3545;
+}
+
+.account-actions {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-account-button {
+    background-color: #1b5e20;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.add-account-button:hover {
+    background-color: #2e7d32;
+}
+
+.notification-status {
+    color: #ccc;
+    font-size: 18px;
+    cursor: default;
+}
+
+.notification-status.sent {
+    color: #1e7e34;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.back-button:hover {
+    color: #1b5e20;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.hand-icon {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 15px; /* Reduce padding */
+    border-radius: 8px;
+    max-width: 400px; /* Reduce max width */
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.modal-header {
+    background-color: #1b5e20;
+    color: white;
+    padding: 10px; /* Reduce padding */
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-footer {
+    padding: 10px; /* Reduce padding */
+    display: flex;
+    justify-content: center;
+}
+
+.modal-footer button {
+    background-color: #1b5e20;
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Reduce padding */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal-footer button:hover {
+    background-color: #2e7d32;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #1e1b4b;
+}
+.main-content {
+    flex: 1;
+    padding: 0;
+    background-color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
+    max-height: calc(100vh - 60px);
+}
+
+/* Estilos comunes para todas las tablas */
+.clients-table,
+.workers-table,
+.accounts-table {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0 20px;
+    overflow-x: auto;
+    position: sticky;
+    bottom: 0;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    border: 1px solid black;
+}
+
+/* Estilos para las barras de scroll */
+.clients-table::-webkit-scrollbar,
+.workers-table::-webkit-scrollbar,
+.accounts-table::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.clients-table::-webkit-scrollbar-track,
+.workers-table::-webkit-scrollbar-track,
+.accounts-table::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.clients-table::-webkit-scrollbar-thumb,
+.workers-table::-webkit-scrollbar-thumb,
+.accounts-table::-webkit-scrollbar-thumb {
+    background: #1e1b4b;
+    border-radius: 4px;
+}
+
+.clients-table::-webkit-scrollbar-thumb:hover,
+.workers-table::-webkit-scrollbar-thumb:hover,
+.accounts-table::-webkit-scrollbar-thumb:hover {
+    background: #151b45;
+}
+
+/* Asegura que todas las tablas mantengan su estructura */
+table {
+    width: 100%;
+    min-width: 800px;
+}
+.content-header {
+    display: none; /* Ocultar el título superior */
+}
+.component-bar {
+    width: 100%;
+    background-color: #1e1b4b;
+    padding: 20px 30px;
+    color: white;
+    margin-bottom: 20px;
+}
+.clients-table {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0 20px; /* Ajustado el margen */
+}
+table {
+    background: white;
+    color: #333;
+}
+.status.al-dia {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+.status.pendiente {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+.status.sin-pagar {
+    background-color: #ffebee;
+    color: #c62828;
+}
+.add-client-button, .historial-button {
+    background-color: #2e3192;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+.search-bar input {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+.status-filter {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+@media screen and (max-width: 1024px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .main-content {
+        margin-top: 140px;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .clients-table {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    table {
+        min-width: 800px;
+    }
+
+    .search-section {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .search-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        margin-top: 120px;
+        padding: 10px;
+    }
+
+    .content-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar, .status-filter {
+        width: 100%;
+    }
+
+    .add-client-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-content {
+        margin-top: 100px;
+        padding: 8px;
+    }
+
+    .content-header h1 {
+        font-size: 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .status {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .manage-btn, .send-btn {
+        width: 100%;
+        margin: 2px 0;
+    }
+}
+
+
+.header-container {
+    background-color: #1e1b4b; /* Match the color used in other components */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+    position: fixed; /* Ensure it stays at the top */
+    top: 0; /* Ensure it is at the top */
+    left: 0; /* Start from the left edge */
+    border-bottom: 1px solid #1e1b4b;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+.header-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
